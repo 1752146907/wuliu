@@ -1,0 +1,36 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+    <title>移动端-物流轨迹查询结果页面嵌入</title>
+    <link rel="stylesheet" href="http://www.kdniao.com/OutDemo/KDNWidget/KDNWidget.css" />
+    </head>
+    <body>
+        <script src="http://www.kdniao.com/OutDemo/KDNWidget/KDNWidget.js"></script>
+        <script>
+            function GetQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配
+                var context = "";
+                if (r != null)
+                    context = r[2];
+                reg = null;
+                r = null;
+                return context == null || context == "" || context == "undefined" ? "" : context;
+            }
+
+            window.onload = function () {
+                alert(window.location.href);
+                let expCode = Request['expCode'];
+                let expNo = Request['expNo'];
+                // let expCode = "HHTT";
+                // let expNo = "TT6600236034657";
+                KDNWidget.run({
+                    serviceType: "A",
+                    expCode: expCode,
+                    expNo: expNo,
+                })
+            }
+    </script>
+    </body>
+</html>
