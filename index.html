@@ -16,16 +16,16 @@
             }
 
             window.onload = function () {
-                let expCode = GetQueryString("expCode");
-                let expNo = GetQueryString("expNo");
+                const KDCode = GetQueryString("expCode");
+                const KDpNo = GetQueryString("expNo");
                 // let expCode = "HHTT";
                 // let expNo = "TT6600236034657";
-                alert(expCode)
-                alert(expNo)
+                alert(KDCode)
+                alert(KDpNo)
                 KDNWidget.run({
                     serviceType: "A",
-                    expCode: expCode,
-                    expNo: expNo,
+                    expCode: KDCode,
+                    expNo: KDpNo,
                 })
             }
     </script>
